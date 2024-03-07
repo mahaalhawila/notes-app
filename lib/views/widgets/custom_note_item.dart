@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:notes_app/cubits/notes_cubit/notes_cubit.dart';
 import 'package:notes_app/models/note_model.dart';
 
 import 'edit_note_view.dart';
@@ -36,6 +38,8 @@ final NoteModel note;
               ),
               trailing: IconButton(onPressed: () {
                 note.delete();
+                //refresh note list
+                BlocProvider.of<NotesCubit>(context).fetchAllNotes();
               }, icon: const Icon(
                  FontAwesomeIcons.trash,
                 color: Colors.black,size: 24,),),
