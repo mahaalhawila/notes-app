@@ -33,7 +33,8 @@ class _AddNoteFormState extends State<AddNoteForm> {
             },
             hint: 'title',
           ),
-          SizedBox(height: 16,),
+          const SizedBox(
+            height: 16,),
           CustomTextField(
             onSaved: (value){
               subTitle=value;
@@ -41,7 +42,8 @@ class _AddNoteFormState extends State<AddNoteForm> {
             hint: 'content',
             maxLines: 5,
           ),
-
+          const SizedBox(
+            height: 32,),
        const ColorListView(),
 
           const SizedBox(
